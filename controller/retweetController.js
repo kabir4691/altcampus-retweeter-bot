@@ -9,10 +9,11 @@ const INTERVAL = 1000 * 60 * 60 * 24;
 function start() {
   
   function retweetMostLiked() {
-    console.log(config.twit.searchParams);
+    console.log({searchParams: config.twit.searchParams});
+
     Twit.get('search/tweets', config.twit.searchParams, (err, data) => {
-      if (err) return console.log({err});
-      console.log({data});
+      if (err) return console.log('search tweets error', err);
+      console.log('search tweets response', data);
 
       if (data.statuses.length === 0) return;
 
@@ -24,14 +25,14 @@ function start() {
 
       console.log({mostLikedTweet});
       Twit.post('statuses/retweet/:id', { id: mostLikedTweet.id_str }, (err, data) => {
-        if (err) return console.log({err});
-        console.log({data});
+        if (err) return console.log('post retweet error', err);
+      console.log('post retweet response', data);
       });
       
     });
   }
-    retweetMostLiked();
-  // setInterval(retweetMostLiked, INTERVAL);
+  
+  setInterval(retweetMostLiked, INTERVAL);
 }
 
 module.exports = {
