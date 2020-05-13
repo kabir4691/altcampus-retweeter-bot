@@ -1,0 +1,13 @@
+{
+  "name": "altcampus-retweeter-bot",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "moment": "^2.25.3",
+    "twit": "^2.2.11"
+  }
+}
