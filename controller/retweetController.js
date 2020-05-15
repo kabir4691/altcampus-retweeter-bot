@@ -9,9 +9,9 @@ const INTERVAL = 1000 * 60 * 60 * 24;
 function start() {
   
   function retweetMostLiked() {
-    console.log({searchParams: config.twit.searchParams});
+    console.log({searchParams: config.twit.searchParams.retweet});
 
-    Twit.get('search/tweets', config.twit.searchParams, (err, data) => {
+    Twit.get('search/tweets', config.twit.searchParams.retweet, (err, data) => {
       if (err) return console.log('search tweets error', err);
       console.log('search tweets response', data);
 

@@ -15,11 +15,20 @@ const twit = {
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
   },
   searchParams: {
-    q: `#AltCampus -filter:retweets ${getSearchDate()}`,
-    lang: 'en',
-    count: 100,
-    result_type: 'recent',
-    include_entities: false
+    retweet: {
+      q: `#AltCampus -filter:retweets ${getSearchDate()}`,
+      lang: 'en',
+      count: 100,
+      result_type: 'recent',
+      include_entities: false
+    },
+    like: {
+      q: '(#AltCampus OR #altcampus) -filter:retweets',
+      lang: 'en',
+      count: 20,
+      result_type: 'recent',
+      include_entities: false
+    }
   }
 }
 
