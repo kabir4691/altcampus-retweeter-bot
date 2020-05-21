@@ -2,7 +2,7 @@ const https = require('https');
 
 function start() {
   setInterval(() => {
-    https.get('https://altcampus-retweeter-bot.herokuapp.com/', res => {
+    https.get('https://altcampus.io', res => {
       console.log(res);
     })
   }, 1000 * 60 * 15);
