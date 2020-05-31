@@ -1,9 +1,7 @@
-const retweetController = require('./controller/retweetController');
 const likeController = require('./controller/likeController');
 const app = require('express')();
 const morgan = require('morgan');
 
-retweetController.start();
 likeController.start();
 
 app.use(morgan('dev'));
