@@ -10,7 +10,7 @@ app.get('/', (_, res) => {
   res.sendStatus(200);
 });
 
-app.listen(4000, () => {
-  console.log('Your app is listening on port 4k');
+app.listen(process.env.PORT || 4000, () => {
+  console.log('Your app is listening on port ' + (process.env.PORT || 4000));
 })
 
